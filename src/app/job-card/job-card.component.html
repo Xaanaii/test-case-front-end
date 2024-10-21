@@ -1,0 +1,52 @@
+<div class="job-card">
+  <!-- Colored Section (Date to Tags) -->
+  <div [ngClass]="{
+        'job-card-one': job.organisationTitle === 'Google',
+        'job-card-two': job.organisationTitle === 'Agoda',
+        'job-card-three': job.organisationTitle === 'Facebook',
+        'job-card-four': job.organisationTitle === 'Netflix',
+        'job-card-five': job.organisationTitle === 'X Corporation',
+        'job-card-six': job.organisationTitle === 'Singapore Airlines',
+        'job-card-seven': job.organisationTitle === 'Amazon',
+        'job-card-eight': job.organisationTitle === 'Gojek Tokopedia',
+        'job-card-nine': job.organisationTitle === 'Airbnb',
+        'job-card-ten': job.organisationTitle === 'Spotify',
+        'job-card-eleven': job.organisationTitle === 'Guoco Land',
+        'job-card-twelve': job.organisationTitle === 'Apple'
+      }" class="colored-section">
+    
+    <!-- Date of Posting in Top Left -->
+    <div class="date-badge">
+      {{ job.date | date: 'dd MMM, yyyy' }}
+    </div>
+
+    <!-- Save Icon in Top Right with Toggle Function -->
+    <i [ngClass]="job.bookmarked ? 'fas fa-bookmark bookmark-icon active' : 'fas fa-bookmark bookmark-icon'"
+       (click)="toggleBookmark()">
+    </i>
+
+    <!-- Company Name, Job Title, and Logo -->
+    <div class="job-card-content">
+      <div class="flex items-center justify-between">
+        <div>
+          <p>{{ job.organisationTitle }}</p>
+          <h3>{{ job.opportunityTitle }}</h3>
+        </div>
+        <img [src]="job.organisationIcon" alt="Company Logo" class="company-logo">
+      </div>
+
+      <!-- Tags Section -->
+      <div class="job-card-tags">
+        <span *ngFor="let tag of job.tags">{{ tag }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- White Section (Salary, Location, and Details Button) -->
+  <div class="job-card-bottom">
+    <p class="salary">{{ job.salary }}</p>
+    <p class="location">{{ job.location }}</p>
+    <!-- Details Button at Bottom Right -->
+    <button class="details-btn">Details</button>
+  </div>
+</div>

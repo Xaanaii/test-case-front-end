@@ -1,0 +1,20 @@
+<div class="flex items-center justify-between mb-4">
+  <!-- Job Count in Left -->
+  <div class="flex items-center">
+    <h2 class="mr-2 text-xl font-bold">Recommended jobs</h2>
+    <div class="px-3 py-1 text-gray-700 bg-gray-200 rounded-full">
+      {{ jobOpportunities.length }} jobs
+    </div>
+  </div>
+
+  <!-- Sort By Button in Right -->
+  <div class="flex items-center">
+    <button class="mr-2 text-gray-500" (click)="sortByUpdated()">Sort by: Last updated</button>
+    <i class="text-gray-500 fa fa-cog"></i>
+  </div>
+</div>
+
+<!-- Grid Layout for Job Cards -->
+<div class="grid grid-cols-3 gap-6">
+  <app-job-card *ngFor="let job of jobOpportunities" [job]="job"></app-job-card>
+</div>

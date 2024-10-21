@@ -1,0 +1,105 @@
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between p-4 text-white bg-black">
+  <div class="flex items-center space-x-6">
+    <!-- Logo -->
+    <div class="text-lg font-bold">
+      <img src="/irregular.png" alt="LuckyJob Logo" class="inline-block h-8">
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="space-x-6">
+      <a href="#" class="hover:underline">Find job</a>
+      <a href="#" class="hover:underline">Messages</a>
+      <a href="#" class="hover:underline">Hiring</a>
+      <a href="#" class="hover:underline">Community</a>
+      <a href="#" class="hover:underline">FAQ</a>
+    </nav>
+  </div>
+
+  <!-- User Location and Profile -->
+  <div class="flex items-center space-x-4">
+    <div class="text-sm"><b>Singapore</b></div>
+    <img src="/pilot.png" alt="User Profile" class="w-8 h-8 rounded-full">
+    
+    <!-- Settings Icon -->
+    <button class="p-2 text-white hover:text-gray-400">
+      <i class="fa fa-cog fa-lg"></i> <!-- Ikon setting -->
+    </button>
+    
+    <!-- Notification Icon -->
+    <button class="p-2 text-white hover:text-gray-400">
+      <i class="fa fa-bell fa-lg"></i> <!-- Ikon notifikasi -->
+    </button>
+  </div>
+</header>
+
+
+<!-- Filter Section -->
+<div class="p-4 text-white bg-gray-800">
+  <div class="flex items-center justify-between">
+    <!-- Search Bar and Dropdown Filters -->
+    <div class="flex items-center space-x-6">
+      <div class="relative">
+        <!-- Icon kaca pembesar di sebelah Designer -->
+        <i class="absolute text-gray-400 transform -translate-y-1/2 fas fa-search left-2 top-1/2"></i>
+        <select class="p-2 pl-8 text-white bg-black rounded-md">
+          <option value="designer">Designer</option>
+          <option value="developer">Developer</option>
+          <option value="data">Data</option>
+          <option value="account">Accountant</option>
+          <option value="director">Director</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+      
+      <div class="relative">
+        <!-- Icon maps di sebelah Work location -->
+        <i class="absolute text-gray-400 transform -translate-y-1/2 fas fa-map-marker-alt left-2 top-1/2"></i>
+        <select class="p-2 pl-8 text-white bg-black rounded-md">
+          <option value="location">Work location</option>
+          <option value="remote">Remote</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+      
+      <div class="relative">
+        <!-- Icon tas di sebelah Experience -->
+        <i class="absolute text-gray-400 transform -translate-y-1/2 fas fa-briefcase left-2 top-1/2"></i>
+        <select class="p-2 pl-8 text-white bg-black rounded-md">
+          <option value="experience">Experience</option>
+          <option value="junior">Junior</option>
+          <option value="senior">Senior</option>
+        </select>
+      </div>
+      
+      <div class="relative">
+        <!-- Icon uang di sebelah Per month -->
+        <i class="absolute text-gray-400 transform -translate-y-1/2 fas fa-dollar-sign left-2 top-1/2"></i>
+        <select class="p-2 pl-8 text-white bg-black rounded-md">
+          <option value="perMonth">Per month</option>
+          <option value="hourly">Per hour</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Salary Range Slider -->
+    <div class="flex items-center space-x-4">
+      <span>Salary range</span>
+      <input type="range" min="1200" max="20000" class="bg-gray-400 rounded-md slider">
+      <span>$1,200 - $20,000</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- Main Content Section (Filter Panel and Job Listings) -->
+<div class="container p-6 mx-auto">
+  <div class="flex space-x-4">
+    <div class="w-1/4">
+      <app-filter-panel></app-filter-panel>
+    </div>
+    <div class="w-3/4">
+      <app-job-listing></app-job-listing>
+    </div>
+  </div>
+</div>
